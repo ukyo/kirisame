@@ -1,0 +1,10 @@
+extends layout
+block scripts
+  script(src='/javascripts/preview.js')
+block content
+  section.entry
+    h1.entry-title
+      a#preview-title(href='/entry/this-is-preview') title
+    .created MMMM Do YYYY
+    ul#preview-tags.tags
+    div#preview-body.entry-body

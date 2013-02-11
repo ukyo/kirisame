@@ -1,0 +1,9 @@
+section.entry
+  h1.entry-title
+    a(href='/entry/#{entry.name}')= entry.title
+  .created= entry.createdForWeb
+  ul.tags
+    each tag in entry.tags
+      li.tag
+        a(href='/tag/#{tag}')= tag
+  div.entry-body!= entry.html

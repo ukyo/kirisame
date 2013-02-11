@@ -1,0 +1,251 @@
+@import "setting";
+
+// mixins
+
+.inline-block () {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+.font (@size) {
+  font-size: @size;
+}
+
+.font (@size, @color) {
+  font-size: @size;
+  color: @color;
+}
+
+.font (@size, @color, @family) {
+  font: @size @family;
+  color: @color;
+}
+
+// global
+html, body, h1, ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+}
+ol, ul { padding-left: 1.5em; }
+html, body {
+  width: 100%;
+  height: 100%;
+  .font(@base-font-size, @base-font-color, @base-font-family);
+  background-color: @base-bg-color;
+}
+header, article, aside, footer, section { display: block; }
+h1, b, em, strong, thead { font-weight: 700; }
+a {
+  text-decoration: none;
+  color: @base-link-color;
+}
+.table-wrap { margin: 1em 0; }
+table { border-spacing: 2px; }
+thead td{ padding: 4px 1em; }
+tbody tr:nth-child(odd) td { background-color: @tbody-odd-bg-color; }
+td {
+  padding: 4px;
+  border: 1px solid @td-border-color;
+}
+blockquote {
+  @width: @base-font-size / 3;
+  border-left: @width solid @blockquote-border-color;
+  margin: 0 @width;
+  padding-left: @width;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 20px;
+  }
+  aside .container section{
+    width: 100%;
+  }
+}
+
+@media (min-width: 1001px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+  aside .container section {
+    width: 460px;
+    margin-right: 20px;
+    .inline-block;
+  }
+}
+
+// tag
+.tags {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.tag {
+  .inline-block;
+  background-color: @tag-bg-color;
+  border-radius: 2px;
+  margin: 0 2px 2px 0 !important;
+  padding: 0 4px !important;
+  a { .font(@tag-font-size, @tag-font-color, @tag-font-family); }
+}
+
+// header
+header {
+  padding: @base-font-size * 0.5 0;
+  // blog title
+  h1 a {
+    .font(@title-font-size, @title-font-color);
+    display: block;
+  }
+  // description
+  p { .font(@description-font-size, @description-font-color); }
+  margin-top: @base-font-size;
+  margin-bottom: @base-font-size * 4;
+}
+
+// entry
+.entry {
+  line-height: @base-lineheight;
+  
+  h1 { margin: 1.5em 0 0.2em; }
+  p { margin: 1em 0; }
+  ul, ol { padding-left: 1.5em; }
+
+  // title
+  h1 a { .font(@entry-title-font-size, @entry-title-font-color); }
+  // created date
+  .created {
+    .font(@entry-created-font-size, @entry-created-font-color);
+    margin:0 0 3px;
+  }
+  // body
+  section {
+    h1 { 
+      .font(@entry-h1-font-size);
+      border-bottom:1px solid rgba(196, 173, 173, 0.32);
+    }
+    section {
+      h1 { .font(@entry-h2-font-size); }
+      section {
+        h1 { .font(@entry-h3-font-size); }
+        section {
+          h1 { .font(@entry-h4-font-size); }
+          section h1 { .font(@entry-h5-font-size); }
+        }
+      }
+    }
+  }
+  margin-bottom: @base-font-size * 4;
+}
+
+// pager
+#pager {
+  position: relative;
+  height: @base-font-size * 2;
+}
+.arrow {
+  position: absolute;
+  &.next { right: 0; }
+  &.prev { left: 0; }
+}
+
+aside {
+  background-color: @aside-bg-color;
+  border-top: 1px solid @aside-border-top-color;
+  padding: @base-font-size 0;
+  h1 {
+    .font(@aside-title-font-size, @aside-title-font-color);
+    margin: 0 0 0.2em;
+  }
+  section { margin-bottom: @base-font-size; }
+
+  // recent entries
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .created {
+    .font(@recent-created-font-size, @recent-created-font-color);
+    margin:0 0.5em;
+  }
+}
+
+footer {
+  background-color: @footer-bg-color;
+  text-align: center;
+  small, small a { font-size: @small-font-size; }
+}
+
+// source code
+pre, code {
+  border-radius: 2px;
+  .font(@code-font-size, @code-font-color, @code-font-family);
+}
+pre {
+  padding: @code-font-size * 1.3;
+  margin: @base-font-size 0;
+  * { font-size: @code-font-size; }
+  overflow-x: auto;
+  &[class^=lang] {
+    padding-left: @code-font-size * 4;
+    position: relative;
+    &::before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding:2px 6px 1px;
+      border-radius: 0px 2px 0 2px;
+    }
+  }
+  ol { margin: 0 !important; padding: 0 !important; }
+  li { height: @code-font-size * 1.2; }
+}
+::before {
+  .lang-bash& { content: 'bash'; }
+  .lang-markdown& { content: 'Markdown'; }
+  .lang-coffee& { content: 'CoffeeScript'; }
+  .lang-javascript& { content: 'JavaScript'; }
+  .lang-less& { content: 'LESS'; }
+  .lang-css& { content: 'CSS'; }
+  .lang-xml& { content: 'XML'; }
+  .lang-html& { content: 'HTML'; }
+  .lang-c_cpp& { content: 'C, C++'; }
+  .lang-clojure& { content: 'Clojure'; }
+  .lang-coldfusion& { content: 'ColdFusion'; }
+  .lang-csharp& { content: 'C#'; }
+  .lang-diff& { content: 'diff'; }
+  .lang-go& { content: 'Go'; }
+  .lang-groovy& { content: 'Groovy'; }
+  .lang-haxe& { content: 'haXe'; }
+  .lang-java& { content: 'Java'; }
+  .lang-latex& { content: 'LaTeX'; }
+  .lang-liquid& { content: 'Liquid'; }
+  .lang-lua& { content: 'Lua'; }
+  .lang-ocaml& { content: 'OCaml'; }
+  .lang-perl& { content: 'Perl'; }
+  .lang-pgsql& { content: 'pgSQL'; }
+  .lang-php& { content: 'PHP'; }
+  .lang-powershell& { content: 'PowerShell'; }
+  .lang-python& { content: 'Python'; }
+  .lang-ruby& { content: 'Ruby'; }
+  .lang-scad& { content: 'Scad'; }
+  .lang-scala& { content: 'Scala'; }
+  .lang-scss& { content: 'SCSS'; }
+  .lang-sh& { content: 'sh'; }
+  .lang-sql& { content: 'SQL'; }
+  .lang-svg& { content: 'SVG'; }
+  .lang-textile& { content: 'Textile'; }
+  .lang-xquery& { content: 'XQuery'; }
+  .lang-yaml& { content: 'YAML'; }
+  .lang-jsx& { content: 'JSX'; }
+  .lang-jade& { content: 'Jade'; }
+}
+code {
+  border: 1px solid @code-border-color;
+  border-radius: 2px;
+  padding: 0 4px;
+  background-color: @code-bg-color;
+}

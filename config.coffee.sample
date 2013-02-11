@@ -1,0 +1,12 @@
+module.exports =
+  username: 'username'
+  author: 'author'
+  password: 'password'
+  blogTitle: 'hoge'
+  description: 'hoge'
+  copyright: 'hoge'
+  cookieSeed: 'hoger'
+  disqus: 'hoge'  
+  indexEntryLength: 5
+  tagEntryLength: 5
+  recentEntryLength: 10

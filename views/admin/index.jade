@@ -1,0 +1,12 @@
+extends layout
+block title
+  title admin
+block style
+  link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+block content
+  h1 Admin
+  ul
+    li
+      a(href='/admin/entry') New Entry
+    li
+      a(href='/admin/entries') Entries

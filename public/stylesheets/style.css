@@ -1,0 +1,349 @@
+html,
+body,
+h1,
+ul,
+ol,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  padding-left: 1.5em;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font: 18px 'PT Sans', sans-serif;
+  color: #323232;
+  background-color: #fcfcfc;
+}
+header,
+article,
+aside,
+footer,
+section {
+  display: block;
+}
+h1,
+b,
+em,
+strong,
+thead {
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  color: #2f8dc6;
+}
+.table-wrap {
+  margin: 1em 0;
+}
+table {
+  border-spacing: 2px;
+}
+thead td {
+  padding: 4px 1em;
+}
+tbody tr:nth-child(odd) td {
+  background-color: #f5f5f5;
+}
+td {
+  padding: 4px;
+  border: 1px solid #bebebe;
+}
+blockquote {
+  border-left: 6px solid #dadada;
+  margin: 0 6px;
+  padding-left: 6px;
+}
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 20px;
+  }
+  aside .container section {
+    width: 100%;
+  }
+}
+@media (min-width: 1001px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+  aside .container section {
+    width: 460px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+  }
+}
+.tags {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.tag {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  background-color: #2c4b53;
+  border-radius: 2px;
+  margin: 0 2px 2px 0 !important;
+  padding: 0 4px !important;
+}
+.tag a {
+  font: 13.5px 'PT Sans Narrow', sans-serif;
+  color: #f9f9ff;
+}
+header {
+  padding: 9px 0;
+  margin-top: 18px;
+  margin-bottom: 72px;
+}
+header h1 a {
+  font-size: 27px;
+  color: #494949;
+  display: block;
+}
+header p {
+  font-size: 13.5px;
+  color: #8f8f91;
+}
+.entry {
+  margin-bottom: 72px;
+}
+.entry h1 {
+  margin: 1.5em 0 0.2em;
+}
+.entry p {
+  margin: 1em 0;
+}
+.entry ul,
+.entry ol {
+  padding-left: 1.5em;
+}
+.entry h1 a {
+  font-size: 27px;
+  color: #2f8dc6;
+}
+.entry .created {
+  font-size: 9px;
+  color: #8f8f91;
+  margin: 0 0 3px;
+}
+.entry section h1 {
+  font-size: 23.400000000000002px;
+  border-bottom: 1px solid rgba(196, 173, 173, 0.32);
+}
+.entry section section h1 {
+  font-size: 21.599999999999998px;
+}
+.entry section section section h1 {
+  font-size: 19.8px;
+}
+.entry section section section section h1 {
+  font-size: 18px;
+}
+.entry section section section section section h1 {
+  font-size: 18px;
+}
+#pager {
+  position: relative;
+  height: 36px;
+}
+.arrow {
+  position: absolute;
+}
+.arrow.next {
+  right: 0;
+}
+.arrow.prev {
+  left: 0;
+}
+aside {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dfdfdf;
+  padding: 18px 0;
+}
+aside h1 {
+  font-size: 21.599999999999998px;
+  color: #7d7d7d;
+  margin: 0 0 0.2em;
+}
+aside section {
+  margin-bottom: 18px;
+}
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+aside .created {
+  font-size: 9px;
+  color: #8f8f91;
+  margin: 0 0.5em;
+}
+footer {
+  background-color: #f6f6f6;
+  text-align: center;
+}
+footer small,
+footer small a {
+  font-size: 13.5px;
+}
+pre,
+code {
+  border-radius: 2px;
+  font: 13.5px 'Inconsolata', monospace;
+  color: #323232;
+}
+pre {
+  padding: 17.55px;
+  margin: 18px 0;
+  overflow-x: auto;
+}
+pre * {
+  font-size: 13.5px;
+}
+pre[class^=lang] {
+  padding-left: 54px;
+  position: relative;
+}
+pre[class^=lang]::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2px 6px 1px;
+  border-radius: 0px 2px 0 2px;
+}
+pre ol {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+pre li {
+  height: 16.2px;
+}
+.lang-bash::before {
+  content: 'bash';
+}
+.lang-markdown::before {
+  content: 'Markdown';
+}
+.lang-coffee::before {
+  content: 'CoffeeScript';
+}
+.lang-javascript::before {
+  content: 'JavaScript';
+}
+.lang-less::before {
+  content: 'LESS';
+}
+.lang-css::before {
+  content: 'CSS';
+}
+.lang-xml::before {
+  content: 'XML';
+}
+.lang-html::before {
+  content: 'HTML';
+}
+.lang-c_cpp::before {
+  content: 'C, C++';
+}
+.lang-clojure::before {
+  content: 'Clojure';
+}
+.lang-coldfusion::before {
+  content: 'ColdFusion';
+}
+.lang-csharp::before {
+  content: 'C#';
+}
+.lang-diff::before {
+  content: 'diff';
+}
+.lang-go::before {
+  content: 'Go';
+}
+.lang-groovy::before {
+  content: 'Groovy';
+}
+.lang-haxe::before {
+  content: 'haXe';
+}
+.lang-java::before {
+  content: 'Java';
+}
+.lang-latex::before {
+  content: 'LaTeX';
+}
+.lang-liquid::before {
+  content: 'Liquid';
+}
+.lang-lua::before {
+  content: 'Lua';
+}
+.lang-ocaml::before {
+  content: 'OCaml';
+}
+.lang-perl::before {
+  content: 'Perl';
+}
+.lang-pgsql::before {
+  content: 'pgSQL';
+}
+.lang-php::before {
+  content: 'PHP';
+}
+.lang-powershell::before {
+  content: 'PowerShell';
+}
+.lang-python::before {
+  content: 'Python';
+}
+.lang-ruby::before {
+  content: 'Ruby';
+}
+.lang-scad::before {
+  content: 'Scad';
+}
+.lang-scala::before {
+  content: 'Scala';
+}
+.lang-scss::before {
+  content: 'SCSS';
+}
+.lang-sh::before {
+  content: 'sh';
+}
+.lang-sql::before {
+  content: 'SQL';
+}
+.lang-svg::before {
+  content: 'SVG';
+}
+.lang-textile::before {
+  content: 'Textile';
+}
+.lang-xquery::before {
+  content: 'XQuery';
+}
+.lang-yaml::before {
+  content: 'YAML';
+}
+.lang-jsx::before {
+  content: 'JSX';
+}
+.lang-jade::before {
+  content: 'Jade';
+}
+code {
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  padding: 0 4px;
+  background-color: #f5f5f5;
+}

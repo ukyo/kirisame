@@ -1,0 +1,121 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+#editor {
+  width: 100%;
+  height: 100%;
+}
+#metadata {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+#info {
+  position: absolute;
+  z-index: 300;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(151, 209, 146, 0.93);
+  color: #285825;
+  border-bottom: 1px solid #285825;
+  text-align: center;
+  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transition: margin .70s linear;
+  -moz-transition: margin .70s linear;
+  -ms-transition: margin .70s linear;
+  -o-transition: margin .70s linear;
+  transition: margin .70s linear;
+}
+#info.disabled {
+  margin: -60px 0 0 0;
+}
+.wrap {
+  width: 400px;
+  height: 132px;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 0 0 3px 3px;
+  -webkit-transition: margin 0.25s ease-in;
+  -moz-transition: margin 0.25s ease-in;
+  -ms-transition: margin 0.25s ease-in;
+  -o-transition: margin 0.25s ease-in;
+  transition: margin 0.25s ease-in;
+}
+.wrap,
+nav {
+  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+}
+.wrap.disabled {
+  margin: -150px auto;
+}
+.wrap,
+.wrap * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.input-line {
+  height: 40px;
+  padding: 10px 10px 0;
+}
+.input-line input[type=text],
+.input-line label {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  line-height: 30px;
+  height: 30px;
+}
+.input-line input {
+  width: 300px;
+}
+.input-line label {
+  text-align: right;
+  width: 80px;
+  padding-right: 10px;
+}
+nav {
+  position: absolute;
+  right: 32px;
+  background-color: #ADADAD;
+  z-index: 200;
+  border-radius: 0 0 3px 3px;
+}
+nav ul,
+nav li {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+nav ul i.item {
+  font-size: 20px;
+  height: 28px;
+  line-height: 28px;
+}
+nav ul a {
+  display: block;
+  padding: 0 2px;
+  color: #555;
+}
+nav ul a:hover {
+  text-decoration: none;
+}

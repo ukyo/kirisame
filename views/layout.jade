@@ -1,0 +1,37 @@
+!!!
+html
+  head
+    block title
+      title= blogTitle
+    link(rel="alternate", type='application/atom+xml', title='atom', href='/atom')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Inconsolata:400,700|PT+Sans+Narrow:400')
+    link(rel='stylesheet', href='/stylesheets/ambiance.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+  body
+    header
+      .container
+        h1
+          a(href='/')= blogTitle
+        p= description
+    article
+      .container
+        block content
+    aside
+      .container
+        section.recent-entries
+          h1.recent-entries-title Recent Entries
+          ul
+            each entry in recentEntries
+              li
+                a(href='/entry/#{entry.name}')= entry.title
+                small.created= entry.createdForWeb
+        section.tag-cloud
+          h1.tag-cloud-title Tag Cloud
+          ul.tags
+            each tag in tagCloud
+              li.tag
+                a(href='/tag/#{tag._id}')= tag._id
+    footer
+      .container
+        small &copy;!{copy}

@@ -1,0 +1,57 @@
+extends layout
+block title
+  title edit
+block style
+  link(rel='stylesheet', href='/stylesheets/edit.css')
+  link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+  link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+block content
+  section#info.disabled
+  section#metadata
+    .wrap.disabled
+      if isNew
+        .input-line
+          label Title
+          input(type='text', name='title', placeholder='Entry Title')
+        .input-line
+          label Entry Path
+          input(type='text', name='name', placeholder='path-to-entry')
+        .input-line
+          label Tags
+          input(type='text', name='tags', placeholder='tags1, tag2, ...')
+      else
+        .input-line
+          label Title
+          input(type='text', name='title', placeholder='Entry Title', value='#{title}')
+        .input-line
+          label Entry Path
+          input(type='text', name='name', placeholder='path-to-entry', value='#{name}', disabled='true')
+        .input-line
+          label Tags
+          input(type='text', name='tags', placeholder='tags1, tag2, ...', value='#{tagsForEditor}')
+  nav
+    ul
+      li
+        a#preview(href='#')
+          i.icon-eye-open.item
+      li
+        a#save(href='#')
+          i.icon-save.item
+      li
+        a#home(href='#')
+          i.icon-home.item
+  if isNew
+    article#editor
+  else
+    article#editor= textForEditor
+block script
+  script(src='/javascripts/ace.js')
+  script(src='/javascripts/ace.highlight.js')
+  script(src='/javascripts/markdown.js')
+  script(src='/javascripts/markdown.gfm.js')
+  script(src='/javascripts/markdown.html5.js')
+  script(src='/javascripts/mode-markdown.js')
+  script(src='/javascripts/theme-ambiance.js')
+  script(src='/javascripts/shortcut.js')
+  script(src='/javascripts/common.js')
+  script(src='/javascripts/edit.js')

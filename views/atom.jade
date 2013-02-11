@@ -1,0 +1,17 @@
+doctype xml
+feed(xmlns='http://www.w3.org/2005/Atom')
+  title= blogTitle
+  subtitle= description
+  id #{req.host}:/info/feed
+  link http://#{req.host}
+  author
+    name= author
+  updated= recentEntries[0].created
+
+  each e in recentEntries
+    entry
+      title= e.title
+      link http://#{req.host}/entry/#{e.name}
+      id #{req.host}/entry/#{e.name}
+      updated= e.created
+      content(type='xhtml')!= e.html

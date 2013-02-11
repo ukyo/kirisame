@@ -1,0 +1,11 @@
+!!!
+html
+  head
+    meta(charset='UTF-8')
+    block title
+    block style
+  body
+    article
+      input(type='hidden', value='#{csrf}', id="csrftoken")
+      block content
+      block script

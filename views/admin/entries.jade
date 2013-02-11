@@ -1,0 +1,25 @@
+extends layout
+block title
+  title entries
+block style
+  link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+block script
+  script(src='/javascripts/common.js')
+  script(src='/javascripts/entries.js')
+block content
+  h1 Entries
+  table.table.table-striped
+    thead
+      tr
+        td Title
+        td Edit
+        td Delete
+    tbody
+      each entry in entries
+        tr
+          td
+            a.site(href='/entry/#{entry.name}')= entry.title
+          td
+            a.edit(href='/admin/entry/#{entry.name}') Edit
+          td
+            a.delete(href='/admin/entry/#{entry.name}') Delete

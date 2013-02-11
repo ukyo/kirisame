@@ -1,0 +1,76 @@
+pre[class^=lang] {
+  background-color: #272822;
+  color: #F8F8F2;
+}
+
+ .ace_invisible {
+  color: #49483E
+}
+
+ .ace_entity.ace_name.ace_tag,
+ .ace_keyword,
+ .ace_meta,
+ .ace_storage {
+  color: #F92672
+}
+
+ .ace_constant.ace_character,
+ .ace_constant.ace_language,
+ .ace_constant.ace_numeric,
+ .ace_constant.ace_other {
+  color: #AE81FF
+}
+
+ .ace_invalid {
+  color: #F8F8F0;
+  background-color: #F92672
+}
+
+ .ace_invalid.ace_deprecated {
+  color: #F8F8F0;
+  background-color: #AE81FF
+}
+
+ .ace_support.ace_constant,
+ .ace_support.ace_function {
+  color: #66D9EF
+}
+
+ .ace_fold {
+  background-color: #A6E22E;
+  border-color: #F8F8F2
+}
+
+ .ace_storage.ace_type,
+ .ace_support.ace_class,
+ .ace_support.ace_type {
+  font-style: italic;
+  color: #66D9EF
+}
+
+ .ace_entity.ace_name.ace_function,
+ .ace_entity.ace_other.ace_attribute-name,
+ .ace_variable {
+  color: #A6E22E
+}
+
+ .ace_variable.ace_parameter {
+  font-style: italic;
+  color: #FD971F
+}
+
+ .ace_string {
+  color: #E6DB74
+}
+
+ .ace_comment {
+  color: #75715E
+}
+
+ .ace_markup.ace_underline {
+  text-decoration: underline
+}
+
+ .ace_indent-guide {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNQ11D6z7Bq1ar/ABCKBG6g04U2AAAAAElFTkSuQmCC) right repeat-y
+}

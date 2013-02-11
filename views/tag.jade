@@ -1,0 +1,7 @@
+extends layout
+block content
+  p Tag page - 
+    em= tag
+  each entry in entries
+    include entry-mixin
+  include pager-mixin
